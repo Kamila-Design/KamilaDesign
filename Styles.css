@@ -75,7 +75,7 @@ header p {
 
 .carousel-inner {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s;
 }
 
 .carousel-item {
@@ -93,7 +93,7 @@ header p {
     max-height: 100%;
     object-fit: contain;
     border-radius: 8px;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s;
 }
 
 .carousel-control {
