@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalSlides = slides.length;
 
     function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.transform = `translateX(${(i - index) * 100}%)`;
+        const offset = -index * 100; // Use negative value to shift left
+        slides.forEach((slide) => {
+            slide.style.transform = `translateX(${offset}%)`;
         });
     }
 
@@ -28,15 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const hammertime = new Hammer(carousel);
 
         hammertime.on('swipeleft', () => {
-            console.log('Swipe left detected');
             nextSlide();
         });
 
         hammertime.on('swiperight', () => {
-            console.log('Swipe right detected');
             prevSlide();
         });
-    } else {
-        console.error('Carousel element not found');
     }
 });
