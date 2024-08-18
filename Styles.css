@@ -81,7 +81,7 @@ header p {
 
 .carousel-item {
     min-width: 100%;
-    height: 70vh; /* Adjust for mobile view */
+    height: 70vh; /* Adjust as needed */
     display: flex;
     justify-content: center;
     align-items: center;
