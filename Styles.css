@@ -69,12 +69,13 @@ header p {
 
 .carousel {
     position: relative;
-    width: 800%;
+    width: 100%;
     overflow: hidden;
 }
 
 .carousel-inner {
     display: flex;
+    width: 800%;
     transition: transform 0.3s ease;
 }
 
