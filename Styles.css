@@ -96,7 +96,7 @@ header p {
 }
 
 .carousel-item:hover img {
-    transform: scale(1.05) translateY(-10px);
+    transform: scale(1.05) translateY(-30px);
 }
 
 .carousel-control {
