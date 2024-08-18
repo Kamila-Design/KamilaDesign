@@ -1,35 +1,42 @@
-let index = 0;
-let startX = 0;
-
-function showSlide(i) {
-    const slides = document.querySelectorAll('.carousel-inner img');
+document.addEventListener("DOMContentLoaded", () => {
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.carousel-item');
     const totalSlides = slides.length;
-    index = (i + totalSlides) % totalSlides;
-    document.querySelector('.carousel-inner').style.transform = `translateX(${-index * 100}%)`;
-}
 
-function nextSlide() {
-    showSlide(index + 1);
-}
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.transform = `translateX(${(i - index) * 100}%)`;
+        });
+    }
 
-function prevSlide() {
-    showSlide(index - 1);
-}
+    function prevSlide() {
+        slideIndex = (slideIndex > 0) ? slideIndex - 1 : totalSlides - 1;
+        showSlide(slideIndex);
+    }
 
-// Swipe detection
-document.querySelector('.carousel').addEventListener('touchstart', function(event) {
-    startX = event.touches[0].clientX;
-});
+    function nextSlide() {
+        slideIndex = (slideIndex < totalSlides - 1) ? slideIndex + 1 : 0;
+        showSlide(slideIndex);
+    }
 
-document.querySelector('.carousel').addEventListener('touchend', function(event) {
-    const endX = event.changedTouches[0].clientX;
-    const diffX = startX - endX;
+    // Initialize the first slide
+    showSlide(slideIndex);
 
-    if (Math.abs(diffX) > 30) { // Swipe threshold
-        if (diffX > 0) {
+    // Swipe functionality
+    const carousel = document.querySelector('.carousel');
+    if (carousel) {
+        const hammertime = new Hammer(carousel);
+
+        hammertime.on('swipeleft', () => {
+            console.log('Swipe left detected');
             nextSlide();
-        } else {
+        });
+
+        hammertime.on('swiperight', () => {
+            console.log('Swipe right detected');
             prevSlide();
-        }
+        });
+    } else {
+        console.error('Carousel element not found');
     }
 });
