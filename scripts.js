@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll('.carousel-item');
     const totalSlides = slides.length;
 
+    if (totalSlides === 0) {
+        console.error('No slides found');
+        return;
+    }
+
     function showSlide(index) {
         slides.forEach((slide, i) => {
             slide.style.transform = `translateX(${(i - index) * 100}%)`;
@@ -28,12 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const hammertime = new Hammer(carousel);
 
         hammertime.on('swipeleft', () => {
-            console.log('Swipe left detected'); // Debugging log
             nextSlide();
         });
 
         hammertime.on('swiperight', () => {
-            console.log('Swipe right detected'); // Debugging log
             prevSlide();
         });
     } else {
