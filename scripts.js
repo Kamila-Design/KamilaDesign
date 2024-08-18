@@ -27,7 +27,7 @@ const hammertime = new Hammer(carousel);
 
 hammertime.on('swipeleft', () => {
     nextSlide();
-});
+}) ;
 
 hammertime.on('swiperight', () => {
     prevSlide();
