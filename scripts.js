@@ -28,24 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const hammertime = new Hammer(carousel);
 
         hammertime.on('swipeleft', () => {
+            console.log('Swipe left detected'); // Debugging log
             nextSlide();
         });
 
         hammertime.on('swiperight', () => {
+            console.log('Swipe right detected'); // Debugging log
             prevSlide();
         });
     } else {
         console.error('Carousel element not found');
     }
-});
-
-const carousel = document.querySelector('.carousel');
-const hammertime = new Hammer(carousel);
-
-hammertime.on('swipeleft', () => {
-    alert('Swipe left detected');
-});
-
-hammertime.on('swiperight', () => {
-    alert('Swipe right detected');
 });
