@@ -75,7 +75,7 @@ header p {
 
 .carousel-inner {
     display: flex;
-    transition: transform 0.8s ease;
+    transition: transform 0.3s ease;
 }
 
 .carousel-item {
