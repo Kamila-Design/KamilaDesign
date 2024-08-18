@@ -81,10 +81,7 @@ header p {
 .carousel-item {
     flex: 0 0 100%; /* Ensure each item takes full width */
     box-sizing: border-box; /* Prevents padding from affecting the width */
-}
-
-.carousel-item {
-    border: 1px solid red; /* Add border to see item boundaries */
+    overflow: hidden;
 }
 
 .carousel-item img {
