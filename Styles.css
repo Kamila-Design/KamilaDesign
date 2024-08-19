@@ -14,9 +14,7 @@ body {
     width: 90%;
     margin: 0 auto;
     max-width: 1200px;
-    height: 100%;
-    display: inline-block; /* Adjusts to the size of the content */
-    overflow: hidden;
+    height: 90%;
 }
 
 /* Header */
@@ -61,8 +59,6 @@ header p {
 .portfolio {
     padding: 40px 0;
     background-color: #FFFFFF;
-    display: inline-block; /* Adjusts to the size of the content */
-    overflow: hidden;
 }
 
 .portfolio h3 {
