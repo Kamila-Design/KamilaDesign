@@ -69,6 +69,8 @@ header p {
 
 .carousel {
     position: relative;
+    display: inline-block; /* Adjusts to the size of the content */
+    overflow: hidden;
     width: 100%;
     overflow: hidden;
     max-height: 70vh; /* Adjust for mobile view */
@@ -76,6 +78,8 @@ header p {
 
 .carousel-inner {
     display: flex;
+    display: inline-block; /* Adjusts to the size of the content */
+    overflow: hidden;
     transition: transform 0.8s ease;
 }
 
